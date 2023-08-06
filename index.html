@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Percentage of Entries</title>
+    <script>
+        // Function to calculate and display the percentages
+        function calculatePercentages() {
+            // Get the red and green entry counts from the template variables
+            var redEntries = {{ red_entries }};
+            var greenEntries = {{ green_entries }};
+            var totalEntries = redEntries + greenEntries;
+
+            // Calculate the percentages
+            var redPercentage = (redEntries / totalEntries) * 100 || 0;
+            var greenPercentage = (greenEntries / totalEntries) * 100 || 0;
+
+            // Display the percentages on the page
+            document.getElementById('redPercentage').textContent = 'Red: ' + redPercentage + '%';
+            document.getElementById('greenPercentage').textContent = 'Green: ' + greenPercentage + '%';
+        }
+
+        // Call the calculatePercentages function when the page loads
+        window.onload = calculatePercentages;
+    </script>
+</head>
+<body>
+    <h1>Percentage of Entries</h1>
+    <p id="redPercentage"></p>
+    <p id="greenPercentage"></p>
+</body>
+</html>
